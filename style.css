@@ -248,7 +248,7 @@ body::before {
   width: 1px;
   height: 1px;
   display: block;
-} /* 무력화된 로고 공간 대체 */
+}
 
 .nav-links {
   display: flex;
@@ -290,7 +290,7 @@ body::before {
 }
 .nav-drawer {
   display: none;
-} /* 데스크톱 모드에서는 무조건 숨김 */
+}
 
 /* ── 히어로 섹션 ── */
 header#about {
@@ -521,6 +521,12 @@ header#about {
   border-color: rgba(58, 181, 200, 0.35);
   background: rgba(255, 255, 255, 0.6);
 }
+
+/* T2 카드 - 팀프로젝트 간격 */
+.project-card--t2 {
+  margin-top: 24px;
+}
+
 .team-members {
   margin: 16px 0;
   font-family: var(--font-mono);
@@ -657,7 +663,6 @@ header#about {
     background: var(--text-dim);
   }
 
-  /* 반응형 모드에서 활성화 */
   .nav-drawer {
     display: block;
     position: fixed;

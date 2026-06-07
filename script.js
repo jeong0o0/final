@@ -11,7 +11,7 @@
   setTimeout(() => {
     loader.classList.add('hidden')
     document.body.style.overflow = ''
-  }, 1200) // 대기 시간 최적화
+  }, 1200)
 })()
 
 /* 2. 커스텀 커서 (모바일 환경이 아닐 때만 부드럽게 작동) */
@@ -50,9 +50,15 @@
   )
 })()
 
-/* 3. 타이핑 효과 */
+/* 3. 타이핑 효과 — 냉장고 프로젝트 라인 추가 */
 ;(function initTypewriter() {
-  const lines = ['Jeong', 'Web Programming', 'Portfolio', 'Website']
+  const lines = [
+    'Jeong',
+    'Web Programming',
+    'Portfolio',
+    'Website',
+    '나만의 냉장고',
+  ]
   const el = document.createElement('p')
   el.id = 'typewriter'
   const titleEl = document.querySelector('.title-main')
@@ -108,7 +114,7 @@
   const canvas = document.getElementById('matrix-canvas')
   if (!canvas) return
   const ctx = canvas.getContext('2d')
-  const FS = 16 // 폰트 크기를 키워 연산 횟수 감소
+  const FS = 16
   const CHARS = '0123456789ABCDEF'
   let cols, drops
 
@@ -120,7 +126,6 @@
   }
   resize()
 
-  // Resize 시에 딜레이를 주어 끊김 방지(Debounce)
   let resizeTimeout
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout)
@@ -128,7 +133,7 @@
   })
 
   setInterval(() => {
-    ctx.fillStyle = 'rgba(232,248,252,0.08)' // 잔상 조절
+    ctx.fillStyle = 'rgba(232,248,252,0.08)'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     ctx.font = `${FS}px "Fira Code", monospace`
 
@@ -140,7 +145,7 @@
       if (drops[i] * FS > canvas.height && Math.random() > 0.975) drops[i] = 0
       drops[i]++
     }
-  }, 80) // 프레임 레이트 안정화 (80ms)
+  }, 80)
 })()
 
 /* 6. 스크롤 진행 바 */
@@ -236,7 +241,7 @@
     'mousemove',
     (e) => {
       const now = Date.now()
-      if (now - last < 70) return // 생성 주기 제한을 늘려 렉 방지
+      if (now - last < 70) return
       last = now
 
       const p = document.createElement('span')
@@ -283,7 +288,7 @@
 /* 13. 카드 3D 틸트 (transform 최적화) */
 ;(function initTilt() {
   const cards = document.querySelectorAll('.project-card')
-  const MAX = 5 // 회전 각도 축소로 부드러움 향상
+  const MAX = 5
   cards.forEach((card) => {
     card.addEventListener(
       'mousemove',
@@ -305,7 +310,7 @@
   })
 })()
 
-/* 14. 텍스트 스크램블 효과 */
+/* 14. 텍스트 스크램블 효과 — T2 카드 h4도 포함되도록 querySelectorAll 유지 */
 ;(function initScramble() {
   const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   document.querySelectorAll('.project-card h4').forEach((el) => {
