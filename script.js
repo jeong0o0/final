@@ -52,13 +52,7 @@
 
 /* 3. 타이핑 효과 — 냉장고 프로젝트 라인 추가 */
 ;(function initTypewriter() {
-  const lines = [
-    'Jeong',
-    'Web Programming',
-    'Portfolio',
-    'Website',
-    '나만의 냉장고',
-  ]
+  const lines = ['Jeong', 'Web Programming', 'Portfolio', 'Website']
   const el = document.createElement('p')
   el.id = 'typewriter'
   const titleEl = document.querySelector('.title-main')
